@@ -1,28 +1,27 @@
 import { motion } from "framer-motion"
-import { ChevronRight, Check, Paperclip, Globe, Lightbulb } from "lucide-react"
+import { ChevronRight, Check } from "lucide-react"
 
-const agents = [
-  { name: "Cursor", isAgent: true, selected: true, icon: "◇" },
-  { name: "GitHub Copilot", isAgent: true, selected: false, icon: "◉" },
-  { name: "Sentry", isAgent: true, selected: false, icon: "◈" },
-  { name: "Leela", isAgent: false, selected: false, icon: "○" },
-  { name: "Codex", isAgent: true, selected: false, icon: "◎" },
-  { name: "Conor", isAgent: false, selected: false, icon: "○" },
+const mapTypes = [
+  { name: "Приключение / Story", isPremium: true, selected: true, icon: "◇" },
+  { name: "SkyWars / PvP", isPremium: true, selected: false, icon: "◉" },
+  { name: "Паркур / Прыжки", isPremium: false, selected: false, icon: "◈" },
+  { name: "RPG-мир", isPremium: true, selected: false, icon: "◎" },
+  { name: "Хаб / Лобби", isPremium: false, selected: false, icon: "○" },
+  { name: "Bedrock Edition", isPremium: true, selected: false, icon: "○" },
 ]
 
 export function AISection() {
   return (
-    <div className="relative z-20 py-40" style={{ backgroundColor: "#09090B" }}>
+    <div className="relative z-20 py-40" style={{ backgroundColor: "#08040F" }}>
       <div
         className="absolute top-0 left-0 right-0 pointer-events-none"
         style={{
           height: "20%",
-          background: "linear-gradient(to bottom, rgba(255,255,255,0.05) 0%, transparent 100%)",
+          background: "linear-gradient(to bottom, rgba(139,92,246,0.05) 0%, transparent 100%)",
         }}
       />
       <div className="w-full flex justify-center px-6">
         <div className="w-full max-w-5xl">
-          {/* Section label */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -30,12 +29,11 @@ export function AISection() {
             transition={{ duration: 0.6 }}
             className="flex items-center gap-2 mb-6"
           >
-            <div className="w-2 h-2 rounded-full bg-blue-500" />
-            <span className="text-zinc-400 text-sm">Искусственный интеллект</span>
+            <div className="w-2 h-2 rounded-full bg-purple-500" />
+            <span className="text-zinc-400 text-sm">Типы карт</span>
             <ChevronRight className="w-4 h-4 text-zinc-500" />
           </motion.div>
 
-          {/* Heading */}
           <motion.h2
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -49,10 +47,9 @@ export function AISection() {
               lineHeight: 1.1,
             }}
           >
-            Разработка с ИИ-помощником
+            Выбери формат своей карты
           </motion.h2>
 
-          {/* Description */}
           <motion.p
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -60,23 +57,21 @@ export function AISection() {
             transition={{ duration: 0.6, delay: 0.2 }}
             className="text-zinc-400 max-w-md mb-8"
           >
-            <span className="text-white font-medium">Orbit для агентов.</span> Выбирайте из множества ИИ-агентов и
-            делегируйте задачи: от генерации кода до других технических задач.
+            <span className="text-white font-medium">Под любой проект.</span> Расскажи идею — я предложу
+            оптимальный формат, механику и бюджет.
           </motion.p>
 
-          {/* Learn more button */}
           <motion.button
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.3 }}
-            className="px-5 py-2.5 bg-zinc-800 text-zinc-300 rounded-lg border border-zinc-700 hover:bg-zinc-700 transition-colors text-sm flex items-center gap-2 mb-16"
+            className="px-5 py-2.5 bg-purple-900/50 text-purple-300 rounded-lg border border-purple-700 hover:bg-purple-800/50 transition-colors text-sm flex items-center gap-2 mb-16"
           >
-            Подробнее
+            Обсудить проект
             <ChevronRight className="w-4 h-4" />
           </motion.button>
 
-          {/* Agent dropdown mockup */}
           <motion.div
             initial={{ opacity: 0, y: 40 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -102,11 +97,10 @@ export function AISection() {
                   position: "relative",
                 }}
               >
-                {/* Glass overlay effect */}
                 <div
                   style={{
-                    border: "1px solid rgba(66, 66, 66, 0.5)",
-                    background: "linear-gradient(rgba(255, 255, 255, 0.1) 40%, rgba(8, 9, 10, 0.1) 100%)",
+                    border: "1px solid rgba(139,92,246,0.3)",
+                    background: "linear-gradient(rgba(139,92,246,0.08) 40%, rgba(8,4,15,0.1) 100%)",
                     borderRadius: "8px",
                     position: "absolute",
                     top: 0,
@@ -114,7 +108,7 @@ export function AISection() {
                     left: 0,
                     right: 0,
                     boxShadow:
-                      "inset 0 1.503px 5.261px rgba(255, 255, 255, 0.04), inset 0 -0.752px 0.752px rgba(255, 255, 255, 0.1)",
+                      "inset 0 1.503px 5.261px rgba(139,92,246,0.08), inset 0 -0.752px 0.752px rgba(255, 255, 255, 0.05)",
                     pointerEvents: "none",
                     zIndex: 10,
                   }}
@@ -122,7 +116,7 @@ export function AISection() {
 
                 <div
                   style={{
-                    background: "linear-gradient(180deg, transparent 0%, #09090B 100%)",
+                    background: "linear-gradient(180deg, transparent 0%, #08040F 100%)",
                     height: "80%",
                     position: "absolute",
                     bottom: "-2px",
@@ -133,26 +127,24 @@ export function AISection() {
                   }}
                 />
 
-                {/* Input field */}
-                <div className="bg-zinc-800/50 border border-zinc-700 rounded-t-xl px-5 py-4">
-                  <span className="text-zinc-500 italic">Назначить...</span>
+                <div className="bg-purple-950/30 border border-purple-900/50 rounded-t-xl px-5 py-4">
+                  <span className="text-zinc-500 italic">Выбрать тип карты...</span>
                 </div>
 
-                {/* Dropdown options */}
-                <div className="bg-zinc-900/80 border border-t-0 border-zinc-700 rounded-b-xl py-1">
-                  {agents.map((agent, index) => (
+                <div className="bg-zinc-900/80 border border-t-0 border-purple-900/40 rounded-b-xl py-1">
+                  {mapTypes.map((type, index) => (
                     <div
-                      key={agent.name}
+                      key={type.name}
                       style={
-                        agent.selected
+                        type.selected
                           ? {
                               transform: "scale(1.04) rotateX(17deg)",
-                              background: "linear-gradient(#343434 0%, #2d2d2d 100%)",
+                              background: "linear-gradient(#2d1554 0%, #1e0d3a 100%)",
                               borderRadius: "6px",
                               height: "48px",
                               position: "relative",
                               boxShadow:
-                                "inset 0 -2.75px 4.75px rgba(255, 255, 255, 0.14), inset 0 -0.752px 0.752px rgba(255, 255, 255, 0.1), 0 54px 73px 3px rgba(0, 0, 0, 0.5)",
+                                "inset 0 -2.75px 4.75px rgba(139,92,246,0.2), 0 54px 73px 3px rgba(0, 0, 0, 0.5)",
                               zIndex: 20,
                               marginLeft: "-12px",
                               marginRight: "-12px",
@@ -165,22 +157,20 @@ export function AISection() {
                     >
                       <div
                         className="flex items-center justify-between h-full"
-                        style={{
-                          paddingLeft: "24px",
-                          paddingRight: "24px",
-                          gap: "12px",
-                        }}
+                        style={{ paddingLeft: "24px", paddingRight: "24px", gap: "12px" }}
                       >
                         <div className="flex items-center gap-3">
-                          <span className="text-zinc-400 text-lg">{agent.icon}</span>
-                          <span className={agent.selected ? "text-white font-medium" : "text-zinc-300"}>
-                            {agent.name}
+                          <span className="text-purple-400 text-lg">{type.icon}</span>
+                          <span className={type.selected ? "text-white font-medium" : "text-zinc-300"}>
+                            {type.name}
                           </span>
-                          {agent.isAgent && (
-                            <span className="text-xs bg-zinc-700 text-zinc-400 px-2 py-0.5 rounded">Агент</span>
+                          {type.isPremium && (
+                            <span className="text-xs bg-purple-900/60 text-purple-300 px-2 py-0.5 rounded border border-purple-800">
+                              Премиум
+                            </span>
                           )}
                         </div>
-                        {agent.selected && <Check className="w-4 h-4 text-zinc-400" />}
+                        {type.selected && <Check className="w-4 h-4 text-purple-400" />}
                       </div>
                     </div>
                   ))}
@@ -189,7 +179,6 @@ export function AISection() {
             </div>
           </motion.div>
 
-          {/* Bottom divider with two columns */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -198,136 +187,57 @@ export function AISection() {
             className="mt-16"
           >
             <div className="grid grid-cols-1 md:grid-cols-2">
-              {/* Left column */}
-              <div className="border-t border-r border-b border-zinc-800/60 pt-12 pr-12 pb-16">
-                <h3 className="text-zinc-200 font-medium text-xl mb-3">Автопилот для продукта</h3>
+              <div className="border-t border-r border-b border-purple-900/40 pt-12 pr-12 pb-16">
+                <h3 className="text-zinc-200 font-medium text-xl mb-3">Индивидуальный подход</h3>
                 <p className="text-zinc-500 text-base mb-8">
-                  Оптимизируйте рабочие процессы с ИИ-ассистентом для рутинных и ручных задач.
+                  Каждый проект начинается с обсуждения идеи. Я подберу стиль, биомы и механики под вашу концепцию.
                 </p>
 
-                {/* Triage Intelligence Card */}
-                <div className="bg-zinc-900/30 border border-zinc-800/60 rounded-xl p-5">
+                <div className="bg-purple-950/20 border border-purple-900/40 rounded-xl p-5">
                   <div className="flex items-center gap-2 mb-5">
-                    <svg className="w-4 h-4 text-zinc-500" viewBox="0 0 16 16" fill="currentColor">
+                    <svg className="w-4 h-4 text-purple-500" viewBox="0 0 16 16" fill="currentColor">
                       <path d="M8 0L9.5 5.5L15 7L9.5 8.5L8 14L6.5 8.5L1 7L6.5 5.5L8 0Z" />
                     </svg>
                     <span className="text-zinc-500 text-sm">
-                      Умная <span className="text-zinc-300">сортировка</span>
+                      Этапы работы{" "}
+                      <span className="text-zinc-300">по карте</span>
                     </span>
                   </div>
 
-                  {/* Suggestions Row */}
-                  <div className="flex items-center gap-3 mb-3">
-                    <span className="text-zinc-600 text-sm w-20">Рекомендации</span>
-                    <div className="flex items-center gap-2">
-                      <span
-                        className="flex items-center gap-1.5 rounded-md px-2 py-1 text-sm"
-                        style={{ background: "#7170ff" }}
-                      >
-                        <span className="w-4 h-4 bg-white/30 rounded-full" />
-                        <span className="text-white">nan</span>
-                      </span>
-                      <span className="flex items-center gap-1.5 bg-zinc-800/30 rounded-md px-2 py-1 text-sm text-zinc-600">
-                        <span className="w-3 h-3 border border-zinc-700 rounded" />
-                        Рефакторинг приложения
-                      </span>
-                      <span className="flex items-center gap-1.5 text-sm text-zinc-700">
-                        <span className="w-2 h-2 bg-zinc-600 rounded-full" />
-                        Slack
-                      </span>
-                    </div>
-                  </div>
-
-                  {/* Duplicate Row */}
-                  <div className="flex items-center gap-3 mb-3">
-                    <span className="text-zinc-600 text-sm w-20">Дубликат</span>
-                  </div>
-
-                  {/* Related Row */}
-                  <div className="flex items-center gap-3 mb-4">
-                    <span className="text-zinc-600 text-sm w-20">Связано с</span>
-                  </div>
-
-                  {/* Expanded Suggestion Card */}
-                  <div className="bg-zinc-800/40 rounded-lg p-4 ml-4">
-                    <div className="flex items-center gap-2 mb-3">
-                      <span className="w-5 h-5 bg-zinc-600 rounded-full" />
-                      <span className="text-zinc-300 text-sm font-medium">nan</span>
-                    </div>
-
-                    <p className="text-zinc-500 text-xs mb-2">Почему этот исполнитель</p>
-                    <p className="text-zinc-500 text-sm mb-4">
-                      Этот человек работал над похожими задачами, связанными с производительностью мобильного приложения
-                    </p>
-
-                    <p className="text-zinc-500 text-xs mb-2">Альтернативы</p>
-                    <div className="flex items-center gap-2 mb-4">
-                      <span className="flex items-center gap-1.5 bg-zinc-700/50 rounded-md px-2 py-1 text-sm">
-                        <span className="w-4 h-4 bg-zinc-500 rounded-full" />
-                        <span className="text-zinc-400">yann</span>
-                      </span>
-                      <span className="flex items-center gap-1.5 bg-zinc-700/50 rounded-md px-2 py-1 text-sm">
-                        <span className="w-4 h-4 bg-zinc-500 rounded-full" />
-                        <span className="text-zinc-400">erin</span>
-                      </span>
-                    </div>
-
-                    <button className="w-full flex items-center justify-center gap-2 bg-zinc-700/50 hover:bg-zinc-600/50 text-zinc-300 text-sm py-2.5 rounded-md transition-colors">
-                      <Check className="w-4 h-4" />
-                      Принять
-                    </button>
+                  <div className="space-y-3">
+                    {["Обсуждение идеи", "Концепт и план", "Строительство", "Тест и финал"].map((step, i) => (
+                      <div key={step} className="flex items-center gap-3">
+                        <div
+                          className="w-6 h-6 rounded-full flex items-center justify-center text-xs font-bold"
+                          style={{ backgroundColor: i === 0 ? "#7e22ce" : "rgba(126,34,206,0.2)", color: i === 0 ? "white" : "#a78bfa" }}
+                        >
+                          {i + 1}
+                        </div>
+                        <span className={`text-sm ${i === 0 ? "text-white" : "text-zinc-500"}`}>{step}</span>
+                      </div>
+                    ))}
                   </div>
                 </div>
               </div>
 
-              {/* Right column */}
-              <div className="border-t border-b border-zinc-800/60 pt-12 pl-12 pb-16">
-                <h3 className="text-zinc-200 font-medium text-xl mb-3">Orbit MCP</h3>
+              <div className="border-t border-b border-purple-900/40 pt-12 pl-12 pb-16">
+                <h3 className="text-zinc-200 font-medium text-xl mb-3">Гарантия качества</h3>
                 <p className="text-zinc-500 text-base mb-8">
-                  Подключите Orbit к любимым инструментам: Cursor, Claude, ChatGPT и другим.
+                  Финальная карта тестируется на производительность и геймплей перед передачей.
                 </p>
 
-                {/* MCP Code Snippet */}
-                <div className="bg-zinc-900/30 border border-zinc-800/60 rounded-xl p-5 font-mono text-sm">
-                  <p className="text-zinc-700 mb-3">//mcp.orbit.app/sse</p>
-                  <div className="space-y-1 mb-6">
-                    <p>
-                      <span className="text-orange-400/70">"mcpServers"</span>
-                      <span className="text-zinc-500">: {"{"}</span>
-                    </p>
-                    <p className="pl-4">
-                      <span className="text-orange-400/70">"orbit"</span>
-                      <span className="text-zinc-500">: {"{"}</span>
-                    </p>
-                    <p className="pl-8">
-                      <span className="text-orange-400/70">"command"</span>
-                      <span className="text-zinc-500">: </span>
-                      <span className="text-green-400/70">"npx"</span>
-                    </p>
-                  </div>
-
-                  {/* Ask Anything Input */}
-                  <div className="bg-zinc-800/40 rounded-lg p-4">
-                    <div className="flex items-center gap-2 mb-4">
-                      <span className="w-0.5 h-5 bg-zinc-600" />
-                      <span className="text-zinc-600">Спросите что угодно</span>
+                <div className="space-y-3">
+                  {[
+                    "Оптимизирована для серверов",
+                    "Поддержка Java и Bedrock",
+                    "Правки после сдачи",
+                    "Документация по установке",
+                  ].map((feat) => (
+                    <div key={feat} className="flex items-center gap-3">
+                      <Check className="w-4 h-4 text-purple-400 flex-shrink-0" />
+                      <span className="text-zinc-400 text-sm">{feat}</span>
                     </div>
-
-                    <div className="flex items-center gap-2">
-                      <button className="flex items-center gap-1.5 border border-zinc-700/60 text-zinc-500 text-sm px-3 py-1.5 rounded-full hover:bg-zinc-700/30 transition-colors">
-                        <Paperclip className="w-3.5 h-3.5" />
-                        Файл
-                      </button>
-                      <button className="flex items-center gap-1.5 border border-zinc-700/60 text-zinc-500 text-sm px-3 py-1.5 rounded-full hover:bg-zinc-700/30 transition-colors">
-                        <Globe className="w-3.5 h-3.5" />
-                        Поиск
-                      </button>
-                      <button className="flex items-center gap-1.5 border border-zinc-700/60 text-zinc-500 text-sm px-3 py-1.5 rounded-full hover:bg-zinc-700/30 transition-colors">
-                        <Lightbulb className="w-3.5 h-3.5" />
-                        Анализ
-                      </button>
-                    </div>
-                  </div>
+                  ))}
                 </div>
               </div>
             </div>

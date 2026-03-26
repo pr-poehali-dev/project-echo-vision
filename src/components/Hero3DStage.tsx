@@ -34,7 +34,7 @@ export function Hero3DStage() {
 
   return (
     <>
-      <section className="relative min-h-screen overflow-hidden" style={{ backgroundColor: "#09090B" }}>
+      <section className="relative min-h-screen overflow-hidden" style={{ backgroundColor: "#08040F" }}>
         <Navbar />
 
         {/* Subtle glow */}
@@ -46,7 +46,7 @@ export function Hero3DStage() {
             transform: "translate(-50%, -30%)",
             width: "1200px",
             height: "800px",
-            background: "radial-gradient(ellipse at center, rgba(99, 102, 241, 0.08) 0%, transparent 70%)",
+            background: "radial-gradient(ellipse at center, rgba(139, 92, 246, 0.15) 0%, transparent 70%)",
           }}
         />
 
@@ -61,7 +61,8 @@ export function Hero3DStage() {
                 transition={{ duration: 0.6 }}
                 className="text-4xl md:text-5xl lg:text-[56px] font-medium text-white leading-[1.1] text-balance"
               >
-                Orbit - инструмент для планирования и создания продуктов
+                Карты Minecraft,{" "}
+                <span style={{ color: "#a855f7" }}>которые запоминаются</span>
               </motion.h1>
               <motion.p
                 initial={{ opacity: 0, y: 20 }}
@@ -69,9 +70,9 @@ export function Hero3DStage() {
                 transition={{ duration: 0.6, delay: 0.1 }}
                 className="mt-6 text-lg text-zinc-400"
               >
-                Система для современной разработки.
+                Строю уникальные миры под заказ — от мини-игр и приключений
                 <br />
-                Управляйте задачами, проектами и дорожными картами.
+                до масштабных RPG-серверов и шоукейс-карт.
               </motion.p>
               <motion.div
                 initial={{ opacity: 0, y: 20 }}
@@ -79,11 +80,11 @@ export function Hero3DStage() {
                 transition={{ duration: 0.6, delay: 0.2 }}
                 className="mt-8 flex items-center gap-6"
               >
-                <button className="px-5 py-2.5 bg-white text-zinc-900 font-medium rounded-lg hover:bg-zinc-100 transition-colors text-sm">
-                  Начать работу
+                <button className="px-5 py-2.5 bg-purple-600 text-white font-medium rounded-lg hover:bg-purple-500 transition-colors text-sm">
+                  Заказать карту
                 </button>
                 <button className="text-zinc-300 font-medium hover:text-white transition-colors flex items-center gap-2 text-sm">
-                  <span className="text-zinc-500">Новинка:</span> Orbit-агент для Slack
+                  <span className="text-zinc-500">Новинка:</span> Поддержка Bedrock Edition
                   <span aria-hidden="true">→</span>
                 </button>
               </motion.div>
@@ -107,7 +108,7 @@ export function Hero3DStage() {
             <div
               className="absolute bottom-0 left-0 right-0 h-72 z-10 pointer-events-none"
               style={{
-                background: "linear-gradient(to top, #09090B 20%, transparent 100%)",
+                background: "linear-gradient(to top, #08040F 20%, transparent 100%)",
               }}
             />
 
@@ -135,7 +136,7 @@ export function Hero3DStage() {
                   ease: [0.22, 1, 0.36, 1],
                 }}
                 style={{
-                  backgroundColor: "#09090B",
+                  backgroundColor: "#0d0618",
                   transformOrigin: "0 0",
                   backfaceVisibility: "hidden",
                   WebkitBackfaceVisibility: "hidden",

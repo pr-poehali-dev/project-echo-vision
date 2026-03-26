@@ -1,40 +1,37 @@
-import { CirclePower } from "lucide-react"
+import Icon from "@/components/ui/icon"
 
 export function Navbar() {
   return (
-    <nav className="fixed top-0 left-0 right-0 z-50 border-b border-zinc-800 bg-[#09090B]/80 backdrop-blur-md">
+    <nav className="fixed top-0 left-0 right-0 z-50 border-b border-purple-900/40 bg-[#08040F]/80 backdrop-blur-md">
       <div className="w-full flex justify-center px-6 py-4">
         <div className="w-full max-w-4xl flex items-center justify-between">
           <div className="flex items-center gap-2">
-            <CirclePower className="w-5 h-5 text-white" />
-            <span className="text-white font-semibold">Orbit</span>
+            <Icon name="Map" className="w-5 h-5 text-purple-400" />
+            <span className="text-white font-semibold tracking-wide">BlockMapper</span>
           </div>
           <div className="hidden md:flex items-center gap-8">
-            <a href="#" className="text-sm text-zinc-400 hover:text-white transition-colors">
-              Продукт
+            <a href="#" className="text-sm text-zinc-400 hover:text-purple-300 transition-colors">
+              Услуги
             </a>
-            <a href="#" className="text-sm text-zinc-400 hover:text-white transition-colors">
-              Ресурсы
+            <a href="#" className="text-sm text-zinc-400 hover:text-purple-300 transition-colors">
+              Портфолио
             </a>
-            <a href="#" className="text-sm text-zinc-400 hover:text-white transition-colors">
-              Тарифы
+            <a href="#" className="text-sm text-zinc-400 hover:text-purple-300 transition-colors">
+              Цены
             </a>
-            <a href="#" className="text-sm text-zinc-400 hover:text-white transition-colors">
-              Клиенты
+            <a href="#" className="text-sm text-zinc-400 hover:text-purple-300 transition-colors">
+              Отзывы
             </a>
-            <a href="#" className="text-sm text-zinc-400 hover:text-white transition-colors">
+            <a href="#" className="text-sm text-zinc-400 hover:text-purple-300 transition-colors">
               Контакты
             </a>
           </div>
           <div className="flex items-center gap-4">
-            <a href="#" className="text-sm text-zinc-400 hover:text-white transition-colors">
-              Войти
-            </a>
             <a
               href="#"
-              className="text-sm text-white bg-zinc-800 hover:bg-zinc-700 px-3.5 py-1.5 rounded-md border border-zinc-700 transition-colors"
+              className="text-sm text-white bg-purple-700 hover:bg-purple-600 px-3.5 py-1.5 rounded-md border border-purple-500 transition-colors"
             >
-              Регистрация
+              Заказать карту
             </a>
           </div>
         </div>
